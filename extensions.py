@@ -28,9 +28,10 @@ class Convertor:
         except ValueError:
             raise BotError(f'Не удалось обработать количество {amount}!')
 
-        url = f'https://api.exchangerate.host/latest?base={from_key }&symbols={to_key}&places={10}'
-        r = requests.get(url)
-        resp = json.loads(r.content)
-        round_value = round(float(resp['rates'][to_key]) * amount, 2)
-        return f"Стоимость {amount} {from_key} по текущему курсу составляет <b>{round_value} {to_key}</b>."
+        # url = f'https://api.exchangerate.host/latest?base={from_key }&symbols={to_key}&places={10}'
+        # r = requests.get(url)
+        # resp = json.loads(r.content)
+        # round_value = round(float(resp['rates'][to_key]) * amount, 2)
+        # return f"Стоимость {amount} {from_key} по текущему курсу составляет <b>{round_value} {to_key}</b>."
+        return f"Апишка не работает, поэтому просто тупо <b>вывожук сообещение</b>."
 
